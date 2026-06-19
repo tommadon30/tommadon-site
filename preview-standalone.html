@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tom Madon, Pl. Fin. — Planificateur financier, Laval</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>/* ═══════════════════════════════════════════════════════
+   Tom Madon — Planificateur financier
+   Design System
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Tokens ─────────────────────────────────────────── */
+:root {
+  --navy:          #0F2240;
+  --navy-dark:     #091829;
+  --navy-mid:      #1A3560;
+  --navy-light:    #2A5089;
+  --accent:        #6B94C4;        /* bleu pâle désaturé */
+  --accent-hover:  #5580AD;
+  --sand:          #F5F1EB;        /* fond sable/blanc cassé */
+  --sand-dark:     #EDE8E0;
+  --white:         #FDFAF6;
+  --text-primary:  #1C1C1E;
+  --text-body:     #3A3A3C;
+  --text-muted:    #6E6E73;
+  --text-light:    #AEAEB2;
+  --border:        #D8D3CB;
+
+  --font-serif:    'Playfair Display', Georgia, serif;
+  --font-sans:     'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm:     6px;
+  --radius-md:     12px;
+  --radius-lg:     20px;
+
+  --shadow-sm:     0 1px 3px rgba(15,34,64,0.08);
+  --shadow-md:     0 4px 16px rgba(15,34,64,0.10);
+  --shadow-lg:     0 12px 40px rgba(15,34,64,0.14);
+
+  --max-w:         1200px;
+  --nav-h:         80px;
+}
+
+/* ── Reset ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--text-body);
+  background: var(--sand);
+}
+img, svg { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ── Container ──────────────────────────────────────── */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── Section spacing ────────────────────────────────── */
+.section { padding: 100px 0; }
+
+/* ── Section headers ────────────────────────────────── */
+.section-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 600px;
+  line-height: 1.7;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.section-header .section-subtitle {
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.35);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.6);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+}
+.btn-outline:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+.btn-large {
+  padding: 18px 40px;
+  font-size: 16px;
+}
+
+/* ─────────────────────────────────────────────────────
+   NAVIGATION
+───────────────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(9, 24, 41, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  height: var(--nav-h);
+}
+.nav-container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+.logo-name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+.logo-title {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-link {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+  border-radius: var(--radius-sm);
+  transition: color 0.15s, background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-link:hover, .nav-link.active {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+.nav-cta {
+  margin-left: 12px;
+  background: var(--accent);
+  color: #fff !important;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+}
+.nav-cta:hover {
+  background: var(--accent-hover) !important;
+}
+.chevron { font-size: 12px; opacity: 0.7; }
+
+/* Dropdown */
+.nav-dropdown { position: relative; }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--navy-dark);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  min-width: 260px;
+  box-shadow: var(--shadow-lg);
+}
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.80);
+  border-radius: var(--radius-sm);
+  transition: background 0.15s, color 0.15s;
+}
+.dropdown-menu li a:hover {
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+}
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ─────────────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-mid) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-h);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 70% 50%, rgba(107,148,196,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 10% 90%, rgba(42,80,137,0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+/* Subtle grid texture */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 80px 40px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+  z-index: 1;
+}
+.hero-content {
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.hero-visual {
+  -webkit-flex: 0 0 420px;
+  flex: 0 0 420px;
+  width: 420px;
+}
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 4.5vw, 64px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+.hero-title em {
+  font-style: italic;
+  color: rgba(255,255,255,0.70);
+}
+.hero-body {
+  font-size: 18px;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.75;
+  max-width: 540px;
+  margin-bottom: 44px;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Hero photo */
+.hero-visual {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  gap: 24px;
+}
+.hero-photo-frame {
+  width: 320px;
+  height: 400px;
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(4px);
+}
+.hero-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, rgba(107,148,196,0.18) 0%, rgba(15,34,64,0.3) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo-initials {
+  font-family: var(--font-serif);
+  font-size: 72px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.20);
+  letter-spacing: -2px;
+}
+.hero-credential {
+  width: 100%;
+  max-width: 320px;
+}
+.credential-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  backdrop-filter: blur(8px);
+}
+.badge-icon {
+  font-size: 20px;
+  color: var(--accent);
+}
+.credential-badge strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  font-family: var(--font-serif);
+}
+.credential-badge span {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ─────────────────────────────────────────────────────
+   VALUE STRIP
+───────────────────────────────────────────────────── */
+.value-strip {
+  background: var(--navy);
+  padding: 40px 0;
+}
+.value-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 40px;
+  text-align: left;
+}
+.value-item p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.60);
+  line-height: 1.5;
+}
+.value-item p strong {
+  color: rgba(255,255,255,0.90);
+  font-weight: 500;
+}
+.value-icon {
+  font-size: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.value-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.10);
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────
+   SERVICES
+───────────────────────────────────────────────────── */
+.services-section {
+  background: var(--sand);
+}
+.services-grid {
+  display: -webkit-flex;
+  display: flex;
+  gap: 28px;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+.services-grid .service-card {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px 36px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--navy-light) 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(107,148,196,0.25);
+}
+.service-card:hover::before { opacity: 1; }
+.service-card-number {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 28px;
+}
+.service-card-icon {
+  width: 44px;
+  height: 44px;
+  color: var(--navy-light);
+  margin-bottom: 24px;
+}
+.service-card-icon svg { width: 100%; height: 100%; }
+.service-card-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.service-card-body {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.70;
+  flex: 1;
+  margin-bottom: 28px;
+}
+.service-card-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-hover);
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
+}
+.service-card:hover .service-card-link { color: var(--navy); }
+
+/* ─────────────────────────────────────────────────────
+   APPROACH
+───────────────────────────────────────────────────── */
+.approach-section {
+  background: var(--sand-dark);
+}
+.approach-grid {
+  display: -webkit-flex;
+  display: flex;
+  gap: 80px;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.approach-text {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.approach-visual {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.approach-body {
+  font-size: 17px;
+  color: var(--text-body);
+  line-height: 1.80;
+  margin-bottom: 20px;
+}
+.approach-body:last-of-type { margin-bottom: 40px; }
+.approach-quote-block {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 48px 44px;
+  margin-bottom: 32px;
+  position: relative;
+}
+.approach-quote-block::before {
+  content: '\201C';
+  position: absolute;
+  top: 20px;
+  left: 36px;
+  font-family: var(--font-serif);
+  font-size: 80px;
+  color: rgba(107,148,196,0.25);
+  line-height: 1;
+}
+.approach-quote {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-style: italic;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+}
+.approach-cite {
+  display: block;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--accent);
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+.approach-stats {
+  display: -webkit-flex;
+  display: flex;
+  gap: 20px;
+}
+.approach-stats .stat-item {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.stat-item {
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+}
+.stat-number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ─────────────────────────────────────────────────────
+   REMUNERATION
+───────────────────────────────────────────────────── */
+.remu-section {
+  background: var(--sand);
+}
+.remu-grid {
+  display: -webkit-flex;
+  display: flex;
+  gap: 28px;
+}
+.remu-card {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.remu-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px 44px;
+}
+.remu-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: nowrap;
+}
+.remu-icon {
+  margin-right: 4px;
+}
+.remu-icon {
+  font-size: 24px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.remu-card-header h3 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--navy);
+}
+.remu-body {
+  font-size: 16px;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+.remu-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-hover);
+  transition: color 0.15s;
+}
+.remu-link:hover { color: var(--navy); }
+
+/* ─────────────────────────────────────────────────────
+   CTA SECTION
+───────────────────────────────────────────────────── */
+.cta-section {
+  background: var(--navy);
+  padding: 100px 0;
+}
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.cta-body {
+  font-size: 17px;
+  color: rgba(255,255,255,0.60);
+  max-width: 480px;
+  line-height: 1.70;
+}
+
+/* ─────────────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────────────── */
+.site-footer {
+  background: var(--navy-dark);
+  padding: 64px 0 40px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-grid {
+  display: -webkit-flex;
+  display: flex;
+  gap: 60px;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+.footer-brand {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.footer-nav {
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.footer-legal {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: right;
+}
+.footer-logo {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.footer-logo-sub {
+  display: block;
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+.footer-address {
+  font-size: 14px;
+  color: rgba(255,255,255,0.40);
+}
+.footer-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-nav a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.15s;
+}
+.footer-nav a:hover { color: #fff; }
+.footer-legal {
+  text-align: right;
+}
+.footer-legal p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.30);
+  line-height: 1.70;
+  margin-bottom: 16px;
+  max-width: 340px;
+  margin-left: auto;
+}
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.20) !important;
+}
+
+/* ─────────────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-inner { flex-direction: column; gap: 60px; }
+  .hero-content { flex: none; width: 100%; }
+  .hero-visual { display: none; }
+  .services-grid { flex-direction: column; max-width: 540px; margin: 0 auto; }
+  .services-grid .service-card { flex: none; width: 100%; }
+  .approach-grid { flex-direction: column; gap: 48px; }
+  .approach-text, .approach-visual { flex: none; width: 100%; }
+  .footer-grid { flex-direction: column; gap: 40px; }
+  .footer-brand, .footer-legal { flex: none; width: 100%; }
+  .footer-legal { text-align: left; }
+  .footer-legal p { margin-left: 0; }
+}
+
+@media (max-width: 768px) {
+  :root { --nav-h: 70px; }
+  .container { padding: 0 24px; }
+  .section { padding: 72px 0; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero-inner { padding: 60px 24px; }
+  .hero-title { font-size: 38px; }
+  .remu-grid { flex-direction: column; }
+  .remu-card { flex: none; width: 100%; }
+  .approach-stats { flex-direction: column; gap: 12px; }
+  .approach-stats .stat-item { flex: none; width: 100%; }
+  .value-list { flex-direction: column; align-items: flex-start; }
+  .value-divider { width: 40px; height: 1px; margin: 0 0 0 16px; }
+  .value-item { padding: 12px 24px; }
+  .cta-inner { flex-direction: column; text-align: center; }
+  .cta-body { margin: 0 auto; }
+}
+</style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════ NAVIGATION ═══════════════════════════ -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-name">Tom Madon</span>
+        <span class="logo-title">Pl. Fin., IQPF</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Accueil</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link">Services <span class="chevron">&#8964;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="retraite.html">Planification de la retraite</a></li>
+            <li><a href="placements.html">Placements</a></li>
+            <li><a href="patrimoine.html">Gestion de patrimoine</a></li>
+          </ul>
+        </li>
+        <li><a href="remuneration.html" class="nav-link">Rémunération</a></li>
+        <li><a href="apropos.html" class="nav-link">À propos</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Prendre contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Planification financière indépendante · Laval &amp; Grand Montréal</p>
+        <h1 class="hero-title">
+          Préparer votre retraite avec<br />
+          <em>clarté, méthode et attention.</em>
+        </h1>
+        <p class="hero-body">
+          Je m'appelle Tom Madon. Diplômé de l'IQPF et planificateur financier depuis plusieurs années,
+          j'accompagne des personnes entre 50 et 65 ans qui veulent aborder la retraite avec confiance —
+          sans complexité inutile, sans conflit d'intérêts cachés.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Discuter de votre situation</a>
+          <a href="retraite.html" class="btn btn-ghost">Découvrir mes services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo-frame">
+          <div class="hero-photo-placeholder">
+            <div class="photo-initials">TM</div>
+          </div>
+        </div>
+        <div class="hero-credential">
+          <div class="credential-badge">
+            <span class="badge-icon">✦</span>
+            <div>
+              <strong>Pl. Fin.</strong>
+              <span>Diplômé IQPF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ VALEUR ═══════════════════════════ -->
+  <section class="value-strip">
+    <div class="container">
+      <ul class="value-list">
+        <li class="value-item">
+          <span class="value-icon">◈</span>
+          <p>Conseils indépendants,<br /><strong>sans produit à vendre</strong></p>
+        </li>
+        <li class="value-divider"></li>
+        <li class="value-item">
+          <span class="value-icon">◈</span>
+          <p>Planification globale :<br /><strong>retraite, fiscalité, succession</strong></p>
+        </li>
+        <li class="value-divider"></li>
+        <li class="value-item">
+          <span class="value-icon">◈</span>
+          <p>Rémunération<br /><strong>transparente et au choix</strong></p>
+        </li>
+        <li class="value-divider"></li>
+        <li class="value-item">
+          <span class="value-icon">◈</span>
+          <p>Clientèle limitée pour<br /><strong>un suivi personnalisé</strong></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
+  <section class="services-section section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Ce que je fais</p>
+        <h2 class="section-title">Trois domaines d'accompagnement</h2>
+        <p class="section-subtitle">
+          Chaque engagement commence par une écoute approfondie de votre situation —
+          pas par un produit ou une solution préconçue.
+        </p>
+      </div>
+      <div class="services-grid">
+
+        <a href="retraite.html" class="service-card">
+          <div class="service-card-number">01</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M24 14v10l6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Planification<br />de la retraite</h3>
+          <p class="service-card-body">
+            Décaissement REER/FERR, coordination RRQ et PSV,
+            fiscalité des revenus de retraite — une stratégie bâtie
+            sur votre réalité, pas sur des moyennes.
+          </p>
+          <span class="service-card-link">En savoir plus →</span>
+        </a>
+
+        <a href="placements.html" class="service-card">
+          <div class="service-card-number">02</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="8,36 18,24 26,30 40,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="40" cy="14" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Placements</h3>
+          <p class="service-card-body">
+            Analyse de votre portefeuille, adéquation au profil de risque,
+            répartition d'actifs adaptée à votre horizon de retraite et
+            à vos objectifs de revenus.
+          </p>
+          <span class="service-card-link">En savoir plus →</span>
+        </a>
+
+        <a href="patrimoine.html" class="service-card">
+          <div class="service-card-number">03</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 8L10 18v22h28V18L24 8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <rect x="18" y="28" width="12" height="12" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Gestion de<br />patrimoine</h3>
+          <p class="service-card-body">
+            Planification successorale, assurance vie et invalidité,
+            protection du patrimoine familial — pour transmettre ce que
+            vous avez bâti dans les meilleures conditions.
+          </p>
+          <span class="service-card-link">En savoir plus →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ APPROCHE ═══════════════════════════ -->
+  <section class="approach-section section">
+    <div class="container approach-grid">
+      <div class="approach-text">
+        <p class="section-eyebrow">Mon approche</p>
+        <h2 class="section-title">Une relation de confiance,<br />pas une relation transactionnelle.</h2>
+        <p class="approach-body">
+          La période entre 50 et 65 ans est souvent la plus déterminante sur le plan financier.
+          Les décisions prises dans cette fenêtre — quand encaisser la RRQ, comment décaisser les REER,
+          comment structurer la succession — ont des effets durables.
+        </p>
+        <p class="approach-body">
+          Mon rôle n'est pas de vous vendre un produit. C'est de comprendre l'ensemble de votre
+          situation et de vous aider à prendre des décisions éclairées, à votre rythme,
+          avec toute l'information nécessaire.
+        </p>
+        <a href="apropos.html" class="btn btn-outline">Mon parcours et mes diplômes</a>
+      </div>
+      <div class="approach-visual">
+        <div class="approach-quote-block">
+          <blockquote class="approach-quote">
+            "Je travaille avec un nombre limité de clients, pour pouvoir
+             offrir le niveau d'attention que chaque situation mérite."
+          </blockquote>
+          <cite class="approach-cite">— Tom Madon, Pl. Fin.</cite>
+        </div>
+        <div class="approach-stats">
+          <div class="stat-item">
+            <span class="stat-number">50–65</span>
+            <span class="stat-label">Tranche d'âge<br />de ma clientèle</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">IQPF</span>
+            <span class="stat-label">Diplôme reconnu<br />au Québec</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Laval</span>
+            <span class="stat-label">Basé au cœur<br />du Grand Montréal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ REMUNERATION ═══════════════════════════ -->
+  <section class="remu-section section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Transparence</p>
+        <h2 class="section-title">Deux modes de rémunération à votre choix</h2>
+        <p class="section-subtitle">
+          Parce que chaque situation est différente, je propose deux formules —
+          chacune avec ses avantages propres. Nous en discutons ensemble lors
+          du premier appel.
+        </p>
+      </div>
+      <div class="remu-grid">
+        <div class="remu-card">
+          <div class="remu-card-header">
+            <span class="remu-icon">◎</span>
+            <h3>Honoraires fixes</h3>
+          </div>
+          <p class="remu-body">
+            Vous payez un montant convenu à l'avance pour un mandat défini —
+            bilan financier, plan de retraite, révision de portefeuille.
+            Le coût est connu dès le départ, indépendamment des actifs que vous détenez.
+          </p>
+          <a href="remuneration.html" class="remu-link">Détails →</a>
+        </div>
+        <div class="remu-card">
+          <div class="remu-card-header">
+            <span class="remu-icon">◎</span>
+            <h3>Pourcentage des actifs</h3>
+          </div>
+          <p class="remu-body">
+            Une rémunération annuelle calculée en pourcentage de vos actifs sous
+            gestion. Ce mode est adapté à un accompagnement continu, avec révisions
+            régulières et accès permanent à mes services.
+          </p>
+          <a href="remuneration.html" class="remu-link">Détails →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CTA CONTACT ═══════════════════════════ -->
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div class="cta-text">
+        <h2 class="cta-title">Prêt à faire le point<br />sur votre situation?</h2>
+        <p class="cta-body">
+          Un premier appel de découverte, sans engagement, pour voir si
+          mon accompagnement correspond à vos besoins.
+        </p>
+      </div>
+      <a href="contact.html" class="btn btn-primary btn-large">Écrire à Tom Madon</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Tom Madon</span>
+        <span class="footer-logo-sub">Planificateur financier, Pl. Fin., IQPF</span>
+        <p class="footer-address">Laval, Québec · Grand Montréal</p>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="retraite.html">Planification de la retraite</a></li>
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="patrimoine.html">Gestion de patrimoine</a></li>
+          <li><a href="remuneration.html">Rémunération</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-legal">
+        <p>Tom Madon est membre de l'Institut québécois de planification financière (IQPF) et encadré par l'Autorité des marchés financiers (AMF).</p>
+        <p class="footer-copy">© 2025 Tom Madon, Pl. Fin. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>// Mobile nav toggle
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-open');
+    hamburger.classList.toggle('is-active');
+  });
+}
+
+// Header scroll effect
+const header = document.querySelector('.site-header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+}, { passive: true });
+</script>
+</body>
+</html>
