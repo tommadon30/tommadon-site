@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rémunération — Tom Madon, Pl. Fin. | Planificateur financier à Laval</title>
+  <meta name="description" content="Comment Tom Madon, planificateur financier indépendant à Laval, est rémunéré : honoraires fixes ou pourcentage des actifs. Deux formules transparentes, au choix selon votre situation." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+  .remu-detail-section {
+    padding: 100px 0;
+    background: var(--cream);
+  }
+  .remu-detail-grid {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+  }
+  .remu-detail-card {
+    flex: 1 1 0;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 52px 44px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 24px rgba(9,24,41,0.06);
+  }
+  .remu-detail-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--r-md);
+    background: var(--sand);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .remu-detail-icon svg { width: 22px; height: 22px; color: var(--navy); }
+  .remu-detail-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .remu-detail-desc {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--txt-mid);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+  .remu-detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 36px;
+    flex: 1;
+  }
+  .remu-detail-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .remu-detail-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(107,148,196,.15);
+    border: 1px solid rgba(107,148,196,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .remu-detail-check svg { width: 9px; height: 9px; color: var(--accent); }
+  .remu-detail-point-text {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--txt);
+    line-height: 1.6;
+  }
+  .remu-detail-point-text strong { font-weight: 500; color: var(--navy); }
+  .remu-detail-suited {
+    background: var(--sand);
+    border-radius: var(--r-sm);
+    padding: 16px 20px;
+    margin-top: auto;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--txt-mid);
+    line-height: 1.6;
+  }
+  .remu-detail-suited strong { font-weight: 500; color: var(--navy); display: block; margin-bottom: 4px; }
+  @media (max-width: 900px) {
+    .remu-detail-grid { flex-direction: column; }
+    .remu-detail-card { flex: none; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-name">Tom Madon</span>
+      <span class="nav-brand-sub">Pl. Fin. · IQPF · Laval</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="retraite.html">Retraite</a></li>
+        <li><a href="placements.html">Placements</a></li>
+        <li><a href="patrimoine.html">Patrimoine</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contact.html" class="nav-cta-link">Évaluation gratuite</a></li>
+      </ul>
+    </nav>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="wrap page-hero-inner">
+    <p class="page-hero-tag">Transparence</p>
+    <h1 class="page-hero-title">Comment je suis<br><em>rémunéré —</em><br>clairement.</h1>
+    <p class="page-hero-subtitle">
+      Deux formules transparentes, sans surprise. Nous en discutons
+      ensemble lors du premier appel et nous choisissons ce qui
+      correspond à votre situation.
+    </p>
+  </div>
+</section>
+
+<!-- INTRO TRANSPARENCE -->
+<section class="content-section bg-sand">
+  <div class="wrap">
+    <div class="content-2col">
+      <div class="content-2col-left">
+        <p class="section-tag">Pourquoi la transparence</p>
+        <h2 class="section-heading">Vous avez le droit<br>de savoir comment<br><em>je suis payé.</em></h2>
+      </div>
+      <div class="content-2col-right">
+        <div class="content-prose">
+          <p>
+            Dans l'industrie financière, la rémunération est souvent opaque —
+            des frais prélevés discrètement, des commissions non déclarées,
+            des produits recommandés pour des raisons qui n'ont rien à voir
+            avec votre intérêt.
+          </p>
+          <p>
+            Ma pratique est différente. Avant de commencer tout mandat, vous savez
+            exactement combien cela vous coûtera et sous quelle forme.
+            <strong>Aucune surprise, aucune rémunération cachée.</strong>
+          </p>
+          <p>
+            Je propose deux formules — non pas parce qu'une est meilleure que l'autre,
+            mais parce que chaque situation est différente. Certains clients préfèrent
+            savoir dès le départ ce qu'ils paient pour un mandat défini. D'autres
+            préfèrent un accompagnement continu avec une rémunération liée à leurs actifs.
+            Les deux ont leur logique. Nous en discutons ensemble.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEUX FORMULES -->
+<section class="remu-detail-section">
+  <div class="wrap">
+    <div class="section-header">
+      <p class="section-tag">Les deux formules</p>
+      <h2 class="section-heading">Deux façons de travailler ensemble.</h2>
+    </div>
+
+    <div class="remu-detail-grid">
+
+      <!-- Honoraires fixes -->
+      <div class="remu-detail-card">
+        <div class="remu-detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <path d="M7 9h10M7 13h6"/>
+          </svg>
+        </div>
+        <h2 class="remu-detail-title">Honoraires fixes</h2>
+        <p class="remu-detail-desc">
+          Un montant convenu à l'avance pour un mandat défini.
+          Vous savez exactement ce que vous payez dès le départ,
+          indépendamment de la valeur de vos actifs.
+        </p>
+        <ul class="remu-detail-list">
+          <li class="remu-detail-point">
+            <span class="remu-detail-check">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 5l2.5 2.5L8 3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="remu-detail-point-text"><strong>Coût connu à l'avance</strong> — Le montant est établi avant le début du mandat, pas calculé après.</span>
+          </li>
+          <li class="remu-detail-point">
+            <span class="remu-detail-check">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 5l2.5 2.5L8 3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="remu-detail-point-text"><strong>Indépendant de vos actifs</strong> — Que vous ayez 200 000 $ ou 800 000 $, le tarif est le même pour le même travail.</span>
+          </li>
+          <li class="remu-detail-point">
+            <span class="remu-detail-check">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 5l2.5 2.5L8 3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="remu-detail-point-text"><strong>Mandats précis</strong> — Bilan financier complet, plan de retraite, révision de portefeuille, analyse successorale.</span>
+          </li>
+          <li class="remu-detail-point">
+            <span class="remu-detail-check">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 5l2.5 2.5L8 3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="remu-detail-point-text"><strong>Flexible</strong> — Un mandat ponctuel ou une série de mandats selon l'évolution de vos besoins.</span>
+          </li>
+        </ul>
+        <div class="remu-detail-suited">
+          <strong>Cette formule convient particulièrement si vous…</strong>
+          avez besoin d'un avis ponctuel, souhaitez un plan de retraite complet avant de prendre une décision importante, ou préférez contrôler exactement ce que vous dépensez en conseils financiers.
+        </div>
+      </div>
+
+      <!-- Pourcentage des actifs -->
+      <div class="remu-detail-card">
+        <div class="remu-detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <h2 class="remu-detail-title">Pourcentage des actifs</h2>
+        <p class="remu-detail-desc">
+          Une rémunération annuelle calculée en pourcentage de vos actifs
+          sous gestion, incluant la possibilité de produits financiers adaptés.
+          Adapté à un accompagnement continu sur le long terme.
+        </p>
+        <ul class="remu-detail-list">
+          <li class="remu-detail-point">
+            <span class="remu-detail-check">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 5l2.5 2.5L8 3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="remu-detail-point-text"><strong>Accès permanent</strong> — Vous pouvez me contacter en tout temps pour des questions, des ajustements, des décisions imprévues.</span>
+          </li>
+          <li class="remu-detail-point">
+            <span class="remu-detail-check">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 5l2.5 2.5L8 3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="remu-detail-point-text"><strong>Révisions régulières</strong> — Votre portefeuille et votre plan sont revus à intervalles définis, sans que vous ayez à le demander.</span>
+          </li>
+          <li class="remu-detail-point">
+            <span class="remu-detail-check">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 5l2.5 2.5L8 3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="remu-detail-point-text"><strong>Intérêts alignés</strong> — Quand vos actifs augmentent, ma rémunération augmente aussi. Nos objectifs sont les mêmes.</span>
+          </li>
+          <li class="remu-detail-point">
+            <span class="remu-detail-check">
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 5l2.5 2.5L8 3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="remu-detail-point-text"><strong>Produits financiers disponibles</strong> — Accès à des fonds de placement, placements garantis et autres produits selon les besoins de votre situation.</span>
+          </li>
+        </ul>
+        <div class="remu-detail-suited">
+          <strong>Cette formule convient particulièrement si vous…</strong>
+          voulez un accompagnement continu tout au long de la retraite, préférez déléguer le suivi régulier plutôt que de revenir vers moi pour chaque question, ou avez un portefeuille qui demande une attention constante.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="remu-note" style="margin-top: 48px; background: var(--sand); border-left-color: var(--accent);">
+      <p style="color: var(--txt-mid);">
+        <strong style="color: var(--navy); font-weight: 500;">Ni l'une ni l'autre n'est supérieure.</strong>
+        Elles répondent à des besoins différents. Lors de notre premier appel,
+        nous prenons le temps de discuter de votre situation pour déterminer ensemble
+        ce qui vous convient le mieux — sans pression, sans engagement.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="content-section">
+  <div class="wrap">
+    <div class="section-header" style="max-width: 720px;">
+      <p class="section-tag">Questions fréquentes</p>
+      <h2 class="section-heading">Ce que les clients demandent<br><em>souvent sur la rémunération.</em></h2>
+    </div>
+
+    <div class="faq-list" style="max-width: 800px;">
+
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Est-ce que le premier appel est vraiment gratuit ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Oui, sans exception. Le premier échange de découverte — environ 30 minutes,
+          en personne à Laval ou en visioconférence — est entièrement gratuit et sans obligation.
+          C'est une conversation pour voir si nous nous convenons mutuellement.
+          Je ne vous présente aucun chiffre, aucun produit, aucune proposition lors de cet appel.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Puis-je changer de formule en cours de route ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Oui. Si vous commencez avec les honoraires fixes pour un mandat ponctuel
+          et décidez ensuite de passer à un accompagnement continu, c'est tout à fait possible.
+          L'inverse est également vrai. Nous adaptons la structure à l'évolution de votre situation.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Recevez-vous des commissions sur les produits que vous recommandez ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Dans le cadre des honoraires fixes, non — aucune commission, aucune rémunération
+          indirecte de la part des fournisseurs de produits. Dans le cadre du pourcentage
+          des actifs, les frais liés aux produits financiers recommandés sont inclus dans
+          la rémunération globale et sont toujours transparents et décrits dans l'entente
+          de service que vous signerez.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Comment les montants sont-ils déterminés ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Pour les honoraires fixes, le montant dépend de la complexité et de l'étendue du mandat.
+          Pour le pourcentage des actifs, le taux est établi selon le montant total sous gestion.
+          Dans les deux cas, tout est négocié et convenu avant le début du travail.
+          Vous recevrez une entente écrite claire avant de commencer.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Y a-t-il des frais cachés ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Non. Ma pratique repose sur la transparence totale. Si vous choisissez des produits
+          financiers qui comportent leurs propres frais (comme des fonds communs de placement),
+          ces frais vous sont expliqués clairement avant tout engagement. Rien ne s'ajoute
+          sans que vous en soyez informé et que vous ayez donné votre accord.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <p class="section-tag" style="justify-content: center;">On en discute ensemble</p>
+    <h2 class="cta-heading">Discutons de la formule<br><em>qui vous correspond.</em></h2>
+    <p class="cta-body">
+      Premier appel gratuit. Aucun engagement. Je vous explique les deux options
+      et nous choisissons ensemble ce qui convient à votre situation.
+    </p>
+    <a href="contact.html" class="btn btn-cta btn-cta-lg">Obtenir une évaluation gratuite</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-name">Tom Madon</p>
+        <p class="footer-sub">Planificateur financier · Pl. Fin. · IQPF</p>
+        <p class="footer-loc">Laval, Québec<br>Région du Grand Montréal</p>
+      </div>
+      <div class="footer-nav-group">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="retraite.html">Planification de la retraite</a></li>
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="patrimoine.html">Gestion de patrimoine</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-group">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="remuneration.html">Rémunération</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal-row">
+      <p class="footer-amf">Tom Madon est membre de l'Institut québécois de planification financière (IQPF) et encadré par l'Autorité des marchés financiers (AMF) du Québec.</p>
+      <p class="footer-copy">© 2025 Tom Madon, Pl. Fin.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+if (hamburger) hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
