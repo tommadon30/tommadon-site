@@ -1,0 +1,239 @@
+<?php get_header(); ?>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Planification financière indépendante · Laval &amp; Grand Montréal</p>
+        <h1 class="hero-title">
+          Préparer votre retraite avec<br />
+          <em>clarté, méthode et attention.</em>
+        </h1>
+        <p class="hero-body">
+          Je m'appelle Tom Madon. Diplômé de l'IQPF et planificateur financier depuis plusieurs années,
+          j'accompagne des personnes entre 50 et 65 ans qui veulent aborder la retraite avec confiance —
+          sans complexité inutile, sans conflit d'intérêts cachés.
+        </p>
+        <div class="hero-actions">
+          <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn btn-primary">Discuter de votre situation</a>
+          <a href="<?php echo esc_url(home_url('/planification-retraite/')); ?>" class="btn btn-ghost">Découvrir mes services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo-frame">
+          <?php if (has_custom_logo()) :
+            $logo_id = get_theme_mod('custom_logo');
+            // Use featured image from a custom "photo" page option if set, else placeholder
+          endif; ?>
+          <div class="hero-photo-placeholder">
+            <div class="photo-initials">TM</div>
+          </div>
+        </div>
+        <div class="hero-credential">
+          <div class="credential-badge">
+            <span class="badge-icon">✦</span>
+            <div>
+              <strong>Pl. Fin.</strong>
+              <span>Diplômé IQPF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE STRIP -->
+  <section class="value-strip">
+    <div class="container">
+      <ul class="value-list">
+        <li class="value-item">
+          <span class="value-icon">◈</span>
+          <p>Conseils indépendants,<br /><strong>sans produit à vendre</strong></p>
+        </li>
+        <li class="value-divider"></li>
+        <li class="value-item">
+          <span class="value-icon">◈</span>
+          <p>Planification globale :<br /><strong>retraite, fiscalité, succession</strong></p>
+        </li>
+        <li class="value-divider"></li>
+        <li class="value-item">
+          <span class="value-icon">◈</span>
+          <p>Rémunération<br /><strong>transparente et au choix</strong></p>
+        </li>
+        <li class="value-divider"></li>
+        <li class="value-item">
+          <span class="value-icon">◈</span>
+          <p>Clientèle limitée pour<br /><strong>un suivi personnalisé</strong></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Ce que je fais</p>
+        <h2 class="section-title">Trois domaines d'accompagnement</h2>
+        <p class="section-subtitle">
+          Chaque engagement commence par une écoute approfondie de votre situation —
+          pas par un produit ou une solution préconçue.
+        </p>
+      </div>
+      <div class="services-grid">
+
+        <a href="<?php echo esc_url(home_url('/planification-retraite/')); ?>" class="service-card">
+          <div class="service-card-number">01</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M24 14v10l6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Planification<br />de la retraite</h3>
+          <p class="service-card-body">
+            Décaissement REER/FERR, coordination RRQ et PSV,
+            fiscalité des revenus de retraite — une stratégie bâtie
+            sur votre réalité, pas sur des moyennes.
+          </p>
+          <span class="service-card-link">En savoir plus →</span>
+        </a>
+
+        <a href="<?php echo esc_url(home_url('/placements/')); ?>" class="service-card">
+          <div class="service-card-number">02</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="8,36 18,24 26,30 40,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="40" cy="14" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Placements</h3>
+          <p class="service-card-body">
+            Analyse de votre portefeuille, adéquation au profil de risque,
+            répartition d'actifs adaptée à votre horizon de retraite et
+            à vos objectifs de revenus.
+          </p>
+          <span class="service-card-link">En savoir plus →</span>
+        </a>
+
+        <a href="<?php echo esc_url(home_url('/gestion-patrimoine/')); ?>" class="service-card">
+          <div class="service-card-number">03</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 8L10 18v22h28V18L24 8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <rect x="18" y="28" width="12" height="12" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Gestion de<br />patrimoine</h3>
+          <p class="service-card-body">
+            Planification successorale, assurance vie et invalidité,
+            protection du patrimoine familial — pour transmettre ce que
+            vous avez bâti dans les meilleures conditions.
+          </p>
+          <span class="service-card-link">En savoir plus →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROCHE -->
+  <section class="approach-section section">
+    <div class="container approach-grid">
+      <div class="approach-text">
+        <p class="section-eyebrow">Mon approche</p>
+        <h2 class="section-title">Une relation de confiance,<br />pas une relation transactionnelle.</h2>
+        <p class="approach-body">
+          La période entre 50 et 65 ans est souvent la plus déterminante sur le plan financier.
+          Les décisions prises dans cette fenêtre — quand encaisser la RRQ, comment décaisser les REER,
+          comment structurer la succession — ont des effets durables.
+        </p>
+        <p class="approach-body">
+          Mon rôle n'est pas de vous vendre un produit. C'est de comprendre l'ensemble de votre
+          situation et de vous aider à prendre des décisions éclairées, à votre rythme,
+          avec toute l'information nécessaire.
+        </p>
+        <a href="<?php echo esc_url(home_url('/a-propos/')); ?>" class="btn btn-outline">Mon parcours et mes diplômes</a>
+      </div>
+      <div class="approach-visual">
+        <div class="approach-quote-block">
+          <blockquote class="approach-quote">
+            "Je travaille avec un nombre limité de clients, pour pouvoir
+             offrir le niveau d'attention que chaque situation mérite."
+          </blockquote>
+          <cite class="approach-cite">— Tom Madon, Pl. Fin.</cite>
+        </div>
+        <div class="approach-stats">
+          <div class="stat-item">
+            <span class="stat-number">50–65</span>
+            <span class="stat-label">Tranche d'âge<br />de ma clientèle</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">IQPF</span>
+            <span class="stat-label">Diplôme reconnu<br />au Québec</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Laval</span>
+            <span class="stat-label">Basé au cœur<br />du Grand Montréal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REMUNERATION -->
+  <section class="remu-section section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Transparence</p>
+        <h2 class="section-title">Deux modes de rémunération à votre choix</h2>
+        <p class="section-subtitle">
+          Parce que chaque situation est différente, je propose deux formules —
+          chacune avec ses avantages propres. Nous en discutons ensemble lors
+          du premier appel.
+        </p>
+      </div>
+      <div class="remu-grid">
+        <div class="remu-card">
+          <div class="remu-card-header">
+            <span class="remu-icon">◎</span>
+            <h3>Honoraires fixes</h3>
+          </div>
+          <p class="remu-body">
+            Vous payez un montant convenu à l'avance pour un mandat défini —
+            bilan financier, plan de retraite, révision de portefeuille.
+            Le coût est connu dès le départ, indépendamment des actifs que vous détenez.
+          </p>
+          <a href="<?php echo esc_url(home_url('/remuneration/')); ?>" class="remu-link">Détails →</a>
+        </div>
+        <div class="remu-card">
+          <div class="remu-card-header">
+            <span class="remu-icon">◎</span>
+            <h3>Pourcentage des actifs</h3>
+          </div>
+          <p class="remu-body">
+            Une rémunération annuelle calculée en pourcentage de vos actifs sous gestion.
+            Ce mode est adapté à un accompagnement continu, avec révisions régulières
+            et accès permanent à mes services.
+          </p>
+          <a href="<?php echo esc_url(home_url('/remuneration/')); ?>" class="remu-link">Détails →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div class="cta-text">
+        <h2 class="cta-title">Prêt à faire le point<br />sur votre situation?</h2>
+        <p class="cta-body">
+          Un premier appel de découverte, sans engagement, pour voir si
+          mon accompagnement correspond à vos besoins.
+        </p>
+      </div>
+      <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn btn-primary btn-large">Écrire à Tom Madon</a>
+    </div>
+  </section>
+
+<?php get_footer(); ?>
